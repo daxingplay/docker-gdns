@@ -1,4 +1,4 @@
-FROM golang:1.8.3-apline
+FROM golang:1.8.3-alpine
 
 ENV PROXY socks5://127.0.0.1:6513
 
