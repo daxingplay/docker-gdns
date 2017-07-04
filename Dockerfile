@@ -7,6 +7,8 @@ COPY start.sh /
 RUN apk add --no-cache bash git && \
     go get github.com/ayanamist/gdns-go && \
     cd $GOPATH/src/github.com/ayanamist/gdns-go/ && \
-    go build
+    go build && \
+    chmod a+x /start.sh && \
+    apk del git
 
 ENTRYPOINT ["/start.sh"]
