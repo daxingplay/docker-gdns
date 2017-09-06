@@ -1,7 +1,10 @@
 #!/bin/bash
 
 cd $GOPATH/src/github.com/ayanamist/gdns-go/
-cp config-example.json config.json
+
+if [ ! -f "config.json" ]; then
+    cp config-example.json config.json
+fi
 
 if [ ! -z "${PROXY}" ]; then
     sed -i -e "s/127.0.0.1:53/0.0.0.0:53/g" config.json
