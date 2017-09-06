@@ -13,4 +13,7 @@ if [ ! -z "${PROXY}" ]; then
     sed -i -e "s#ss://method:pass@server:port#$PROXY#g" config.json
 fi
 
+echo "config file: \n"
+cat config.json
+
 ./gdns-go
