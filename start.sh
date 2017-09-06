@@ -2,7 +2,9 @@
 
 cd $GOPATH/src/github.com/ayanamist/gdns-go/
 
-if [ ! -f "config.json" ]; then
+if [ -f "/config.json" ]; then
+    cp /config.json config.json
+else
     cp config-example.json config.json
 fi
 
