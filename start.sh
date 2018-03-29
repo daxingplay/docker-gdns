@@ -4,6 +4,8 @@ cd $GOPATH/src/github.com/ayanamist/gdns-go/
 
 if [ -f "/config.json" ]; then
     cp /config.json config.json
+else if [ -f "/etc/gdns/config.json" ]; then
+    cp /etc/gdns/config.json config.json
 else
     cp config-example.json config.json
 fi
